@@ -8,7 +8,7 @@
     }
 ---
 
-<div class="card" id="retarded">
+<div class="card" id="card">
     <!-- extract image path from json, create <img> element  -->
     <!-- filter image here? -->
     {Object.entries(factsheet).filter(r => r && r[0] !== "default" && r[0] !== "fact").map(f => (
@@ -22,12 +22,10 @@
 </div>
 
 
-
-<script>
-    const checkAvailability = () => {
-        console.log(factsheet)
-    }
-    checkAvailability();
+<script define:vars={{factsheet}}>
+    if (!Object.keys(factsheet).length) {
+        document.getElementById('card').style.display = 'none';
+    } 
 </script>
 
 <style>
