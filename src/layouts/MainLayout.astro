@@ -6,6 +6,7 @@ import Footer from '../components/Footer/Footer.astro';
 import PageContent from '../components/PageContent/PageContent.astro';
 import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
 import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
+import Factsheet from '../components/Factsheet/Factsheet.astro';
 import * as CONFIG from '../config';
 
 const { content = {} } = Astro.props;
@@ -105,6 +106,7 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 				#grid-right {
 					grid-column: 3;
 					display: flex;
+					flex-direction: column;
 				}
 			}
 		</style>
@@ -120,9 +122,11 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 				<PageContent {content} {githubEditUrl}>
 					<slot />
 				</PageContent>
+				
 			</div>
 			<aside id="grid-right" class="grid-sidebar" title="Table of Contents">
 				<RightSidebar {content} {githubEditUrl} />
+				<Factsheet {content}></Factsheet>
 			</aside>
 		</main>
 	</body>

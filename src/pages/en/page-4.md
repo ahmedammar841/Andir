@@ -1,5 +1,6 @@
 ---
 title: Page 4
+fact: page4
 description: Lorem ipsum dolor sit amet - 4
 layout: ../../layouts/MainLayout.astro
 ---

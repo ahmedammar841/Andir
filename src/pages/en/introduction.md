@@ -1,5 +1,6 @@
 ---
 title: Introduction
+fact: introduction
 description: Docs intro
 layout: ../../layouts/MainLayout.astro
 ---

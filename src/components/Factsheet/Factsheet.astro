@@ -1,33 +1,55 @@
 ---
-	export interface Props {
-		facts: string,
-	}
-
-    const {facts} = Astro.props as Props;
+    const {content} = Astro.props;
+    const factsheet_list = await Astro.glob('/src/pages/en/factsheets/*.json');
+    var factsheet_result = factsheet_list.filter((item) => item.fact  === content.fact);
+    var factsheet = [];
+    if (factsheet_result.length > 0) {
+        factsheet = factsheet_result[0];
+    }
 ---
 
-const posts = await Astro.glob('../pages/post/*.md'); // returns an array of posts that live at ./src/pages/post/*.md
-
-<div>
-    <slot />
+<div class="card" id="retarded">
+    <!-- extract image path from json, create <img> element  -->
+    <!-- filter image here? -->
+    {Object.entries(factsheet).filter(r => r && r[0] !== "default" && r[0] !== "fact").map(f => (
+        <div>
+            <p class="fact_key">{f[0]}</p>
+            {Object.values(f[1]).map(v => (
+                <p class="fact_value">{v}</p>
+            ))}
+        </div>
+    ))}
 </div>
 
 
-<nav class="sidebar-nav" aria-labelledby="grid-right">
-	<div class="sidebar-nav-inner">
-	</div>
-</nav>
+
+<script>
+    const checkAvailability = () => {
+        console.log(factsheet)
+    }
+    checkAvailability();
+</script>
 
 <style>
-	.sidebar-nav {
-		width: 100%;
-		position: sticky;
-		top: 0;
-	}
-	.sidebar-nav-inner {
-		height: 100%;
-		padding: 0;
-		padding-top: var(--doc-padding);
-		overflow: auto;
-	}
+    p {
+        padding: 0.1rem 0 0.1rem 1rem;
+    }
+    p:last-child {
+        padding: 0.1rem 0 .25rem 1rem;
+    }
+
+    .card {
+        padding-bottom: .75rem;
+        background-color: var(--theme-code-inline-bg);
+        border-radius: 5px;
+    }
+    .fact_key {
+        padding: .7rem 0 0.1rem 1rem;
+        color: var(--theme-text);
+        font-weight: 600;
+    }
+    .fact_value {
+          line-height: 1.25;
+        /* color: var(--theme-text); */
+    }
 </style>
