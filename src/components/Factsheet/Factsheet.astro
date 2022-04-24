@@ -6,16 +6,35 @@
     if (factsheet_result.length > 0) {
         factsheet = factsheet_result[0];
     }
+    console.log(factsheet)
 ---
 
 <div class="card" id="card">
-    <!-- extract image path from json, create <img> element  -->
+    <!-- extract image path from json, create <img> element-->
     <!-- filter image here? -->
-    {Object.entries(factsheet).filter(r => r && r[0] !== "default" && r[0] !== "fact").map(f => (
+    {Object.entries(factsheet).filter(r => r && r[0].startsWith("imagetop")).map(f => (
+        <div>
+            <p class="fact_key">{f[0].substring(f[0].indexOf('_') + 1).replace(/_/g, " ")}</p>
+            {Object.values(f[1]).map(v => (
+                <img src = {v.toString()}>
+            ))}
+        </div>
+    ))}
+
+    {Object.entries(factsheet).filter(r => r && r[0] !== "default" && r[0] !== "fact" && !r[0].startsWith("image")).map(f => (
         <div>
             <p class="fact_key">{f[0]}</p>
             {Object.values(f[1]).map(v => (
                 <p class="fact_value">{v}</p>
+            ))}
+        </div>
+    ))}
+
+    {Object.entries(factsheet).filter(r => r && r[0].startsWith("imagebot")).map(f => (
+        <div>
+            <p class="fact_key">{f[0].substring(f[0].indexOf('_') + 1).replace(/_/g, " ")}</p>
+            {Object.values(f[1]).map(v => (
+                <img src = {v.toString()}>
             ))}
         </div>
     ))}

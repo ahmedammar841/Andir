@@ -2,6 +2,8 @@
     "fact": "introduction",
     "Name": ["Yeet"],
     "Alignment": ["Lawful good"],
-    "Tenets": ["astro is cringe", "js is cringe", "=== is cringe", "json is cringe"]
+    "Tenets": ["astro is cringe", "js is cringe", "=== is cringe", "json is cringe"],
+    "imagetop1_Test_Symbol_Title": ["/images/divinity/symbol1.webp"],
+    "imagebot2_Test_Symobl_Title_2": ["/images/divinity/symbol1.webp"]
 }
 
