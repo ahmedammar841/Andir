@@ -6,12 +6,9 @@
     if (factsheet_result.length > 0) {
         factsheet = factsheet_result[0];
     }
-    console.log(factsheet)
 ---
 
 <div class="card" id="card">
-    <!-- extract image path from json, create <img> element-->
-    <!-- filter image here? -->
     {Object.entries(factsheet).filter(r => r && r[0].startsWith("imagetop")).map(f => (
         <div>
             <p class="fact_key">{f[0].substring(f[0].indexOf('_') + 1).replace(/_/g, " ")}</p>
@@ -48,14 +45,21 @@
 </script>
 
 <style>
+    img {
+        max-width: calc(100% - 2rem);
+        border-radius: 3px;
+    }
     p {
+        text-align: left;
         padding: 0.1rem 0 0.1rem 1rem;
     }
     p:last-child {
         padding: 0.1rem 0 .25rem 1rem;
     }
-
     .card {
+        text-align: center;
+        max-width: 20ch;
+        float: right;
         padding-bottom: .75rem;
         background-color: var(--theme-code-inline-bg);
         border-radius: 5px;
@@ -68,5 +72,20 @@
     .fact_value {
           line-height: 1.25;
         /* color: var(--theme-text); */
+    }
+    @media (min-width: 50em) {
+        .card {
+            max-width: 28ch;
+        }
+    }
+    @media (min-width: 72em) {
+        .card {
+            max-width: 35ch;
+        }
+    }
+    @media (min-width: 110em) {
+        .card {
+            max-width: 40ch;
+        }
     }
 </style>

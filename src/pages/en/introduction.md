@@ -5,11 +5,11 @@ description: Docs intro
 layout: ../../layouts/MainLayout.astro
 ---
 
+<!-- ![Alt text](/images/divinity/justice_god.jpg "a title") -->
 **Welcome to Astro!**
 
 This is the `docs` starter template. It contains all of the features that you need to build a Markdown-powered documentation site, including:
-![Alt text](/images/divinity/justice_god.jpg "a title")
-![Alt text](/images/divinity/cosmos.jpg "a title")
+<!-- ![Alt text](/images/divinity/cosmos.jpg "a title") -->
 - ✅ **Full Markdown support**
 - ✅ **Responsive mobile-friendly design**
 - ✅ **Sidebar navigation**

@@ -277,14 +277,6 @@ blockquote {
 	line-height: 1.7;
 }
 
-/* TODO: Change the css to specifically target the god image instead of the first image
- since this way it'll also apply on other pages such as maps */
-img:first-of-type {
-	display: flex;
-	max-width: 50%;
-	/* max-height:  */
-}
-
 img {
 	max-width: 100%;
 }

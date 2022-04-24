@@ -38,6 +38,7 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 					minmax(var(--gutter), 1fr)
 					minmax(0, var(--max-width))
 					minmax(var(--gutter), 1fr);
+				justify-content: center;
 				overflow-x: hidden;
 			}
 			.layout :global(> *) {
@@ -92,8 +93,15 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 					grid-column: 1;
 				}
 			}
-
 			@media (min-width: 72em) {
+
+			}
+			@media (min-width: 110em) {
+				#grid-right {
+					grid-column: 3;
+					display: flex;
+					flex-direction: column;
+				}
 				.layout {
 					grid-template-columns:
 						20rem
@@ -102,11 +110,6 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 					padding-left: 0;
 					padding-right: 0;
 					/* margin: 0 auto; */
-				}
-				#grid-right {
-					grid-column: 3;
-					display: flex;
-					flex-direction: column;
 				}
 			}
 		</style>
@@ -120,13 +123,14 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 			</aside>
 			<div id="grid-main">
 				<PageContent {content} {githubEditUrl}>
+					<Factsheet {content}></Factsheet>
 					<slot />
 				</PageContent>
 				
 			</div>
 			<aside id="grid-right" class="grid-sidebar" title="Table of Contents">
 				<RightSidebar {content} {githubEditUrl} />
-				<Factsheet {content}></Factsheet>
+				<!-- <Factsheet {content}></Factsheet> -->
 			</aside>
 		</main>
 	</body>
