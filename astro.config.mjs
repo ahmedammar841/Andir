@@ -6,7 +6,7 @@ import react from '@astrojs/react';
 export default defineConfig({
 	// site: "https://ahmedammar841.github.io",
 	site: "https://wiki.ammarahmed.net",
-	base: '/Andir/',
+	// base: '/Andir/',
 	integrations: [
 		// Enable Preact to support Preact JSX components.
 		preact(),
