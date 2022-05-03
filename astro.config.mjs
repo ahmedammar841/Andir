@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://wiki.ammarahmed.net",
+	site: "https://ahmedammar841.github.io/Andir/",
 	integrations: [
 		// Enable Preact to support Preact JSX components.
 		preact(),
