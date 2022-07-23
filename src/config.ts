@@ -1,6 +1,6 @@
 export const SITE = {
-	title: 'Your Documentation Website',
-	description: 'Your website description.',
+	title: 'Andir',
+	description: 'Andir wiki.',
 	defaultLanguage: 'en_US',
 };
 
@@ -34,13 +34,27 @@ export const KNOWN_LANGUAGES = {
 
 export const SIDEBAR = {
 	en: [
-		{ text: '', header: true },
-		{ text: 'Section Header', header: true },
+		{ text: 'Divinity', header: true },
 		{ text: 'Introduction', link: 'en/introduction' },
-		{ text: 'Page 2', link: 'en/page-2' },
-		{ text: 'Page 3', link: 'en/page-3' },
-
-		{ text: 'Another Section', header: true },
-		{ text: 'Page 4', link: 'en/page-4' },
+		{ text: 'Akkada', link: 'en/akkada' },
+		{ text: 'Beherit', link: 'en/beherit' },
+		{ text: 'Eias', link: 'en/eias' },
+		{ text: 'Granthor', link: 'en/granthor' },
+		{ text: 'Hilaya', link: 'en/hilaya' },
+		{ text: 'Iryuna', link: 'en/iryuna' },
+		{ text: 'Jin', link: 'en/jin' },
+		{ text: 'Kabiri', link: 'en/kabiri' },
+		{ text: 'Masume', link: 'en/masume' },
+		{ text: 'Obi', link: 'en/obi' },
+		{ text: 'Qiblesh', link: 'en/qiblesh' },
+		{ text: 'Sayth', link: 'en/sayth' },
+		{ text: 'Sumeena', link: 'en/sumeena' },
+		{ text: 'Tae', link: 'en/tae' },
+		{ text: 'Tekir', link: 'en/tekir' },
+		{ text: 'Toyama', link: 'en/toyama' },
+		{ text: 'Ulukthai', link: 'en/ulukthai' },
+		{ text: 'Xentan', link: 'en/xentan' },
+		{ text: 'Yanagi', link: 'en/yanagi' },
+		{ text: 'Yitrik', link: 'en/yitrik' },
 	],
 };

@@ -1,0 +1,9 @@
+{
+    "fact": "akkada",
+    "Name": ["Akkada"],
+    "Alignment": ["Lawful Evil"],
+    "w2Divine_Domains": ["Vengence","Chromatic Dragons"],
+    "imagetop1_": ["/images/divinity/akkada.jpg"],
+    "default": ["test", "test2"]
+}
+

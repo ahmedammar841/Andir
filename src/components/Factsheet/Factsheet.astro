@@ -18,9 +18,18 @@
         </div>
     ))}
 
-    {Object.entries(factsheet).filter(r => r && r[0] !== "default" && r[0] !== "fact" && !r[0].startsWith("image")).map(f => (
+    {Object.entries(factsheet).filter(r => r && r[0] !== "default" && !r[0].startsWith("w2") && r[0] !== "fact" && !r[0].startsWith("image")).map(f => (
         <div>
             <p class="fact_key">{f[0]}</p>
+            {Object.values(f[1]).map(v => (
+                <p class="fact_value">{v}</p>
+            ))}
+        </div>
+    ))}
+
+    {Object.entries(factsheet).filter(r =>  r && r[0].startsWith("w2")).map(f => (
+        <div>
+            <p class="fact_key">{f[0].substring(2).replace(/_/g, " ")}</p>
             {Object.values(f[1]).map(v => (
                 <p class="fact_value">{v}</p>
             ))}
